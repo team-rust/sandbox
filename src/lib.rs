@@ -67,7 +67,10 @@ fn quicksort<T: Ord>(arr: &mut [T]) {
 }
 
 pub fn is_sorted<T: Ord + Debug>(arr: &[T]) ->  bool {
+    // This output will be suppressed by default.
+    // Use `cargo test -- --nocapture` to show it
     println!("{:?}", arr);
+
     for win in arr.windows(2) {
         if win[0] > win[1] {
             return false;
