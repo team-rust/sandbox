@@ -46,6 +46,8 @@ fn mergesort<T: Ord + Clone>(arr: &[T]) -> Vec<T> {
 }
 
 #[allow(dead_code)]
+/// Standard sedgewick quicksort
+/// Heavily inspired by https://www.reddit.com/r/rust/comments/31v6gw/sample_quicksort/cq5du5n
 fn quicksort<T: Ord>(arr: &mut [T]) {
     let length = arr.len();
     if length < 2 {
@@ -66,6 +68,7 @@ fn quicksort<T: Ord>(arr: &mut [T]) {
     quicksort(&mut arr[pivot + 1..]);
 }
 
+/// Helper method for unit tests
 pub fn is_sorted<T: Ord + Debug>(arr: &[T]) ->  bool {
     // This output will be suppressed by default.
     // Use `cargo test -- --nocapture` to show it
